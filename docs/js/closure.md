@@ -42,3 +42,101 @@
         return n * fastFactorial(n - 1);
     })
 ```
+
+函数式编程 即 f(x) = Y 需满足如下条件：
+
+- 函数必须总是接受一个参数
+- 函数必须总是返回一个值
+- 函数必须依据接受到的参数（例如x）而不是外部参数运行
+- 对于一个给定的X，只会输出唯一的一个Y
+
+### 柯里化
+
+ > 柯里化是把一个多参数函数转化为一个嵌套的一元函数的过程<br>
+ > function(a, b, c) => function(a)(b)(c)
+
+柯里化的好处在于可以将参数有重复赋予部分的函数抽取出来
+
+``` js
+function curry(fn) {
+    if (fn === undefined) {
+        // throw error
+    }
+    return curriedFu(...args) {
+        if (args.length < fn.length) {
+            return function () {
+                return curriedFn.apply(null, args.concat([].slice.call(arguments)));
+            }
+        }
+        return fn.appay(null, args);
+    }
+}
+```
+
+应用如下：
+
+> 在数组内容中查找数字
+
+
+``` js
+let match = curry(function(expr, str) {
+    return str.match(expr);
+})
+
+let hasNumber = match(/[0-9]+/);
+
+let filter = curry(function(f, ary) {
+    return ary.filter(f);
+})
+
+// 结合可创建新函数findNumInArr
+
+let findNumInArr = filter(hasNumber);
+
+findNumInArr(['js', 'aaa1']) // ['aaa1'];
+
+```
+
+### 偏应用
+
+偏应用允许开发者部分地应用函数，其好处体现在可以将重复参数在后方，未知数在前方的函数抽取出来
+
+``` js
+function partial(...partArguments) {
+    let args = partArguments;
+    return functin (...fullArguments) {
+        let arg = 0;
+        for (let i = 0; i < args.length, args.length < fullArguments; i++) {
+            if (args[i] === undefined) {
+                args[i] = fullArguments[arg++];
+            }
+        }
+        return fn.apply(null, args);
+    }
+}
+```
+应用如下：
+``` js
+let delayTenMs = partial(setTimeout, undefined, 10);
+delayTenMs(() => console.log('我会被打印'));
+```
+
+
+### 组合和管道
+
+> 每个程序的输出应该是另一个尚未可知的程序的输入
+
+组合为从右往左的函数组合，右边的结果是左边的输入，而管道的结合方向相反
+
+``` js
+ const compose = (...fns) => {
+     value => {
+         reduce(fns.reverse(), (acc, fn) => fn(acc), value); // ([数组的项], [函数执行], [初始值])
+     }
+ }
+ const pipe = (...fns) => {
+     value => {
+         reduce(fns, (acc, fn) => fn(acc), value);
+     }
+ }
+```
