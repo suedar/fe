@@ -7,7 +7,7 @@
 - 函数内再嵌套函数
 - 内部函数可以引用外层的参数和变量
 - 参数和变量不会被垃圾回收机制回收
-  
+
 ## 说说你对闭包的理解
 - 使用闭包主要是为了设计私有的方法和变量。闭包的优点是可以避免全局变量的污染，缺点是闭包会常驻
 内存，会增大内存使用量，使用不当很容易造成内存泄露。在 js 中，函数即闭包，只有函数才会产生作
@@ -62,13 +62,13 @@ function curry(fn) {
     if (fn === undefined) {
         // throw error
     }
-    return curriedFu(...args) {
+    return function curriedFn (...args) {
         if (args.length < fn.length) {
             return function () {
                 return curriedFn.apply(null, args.concat([].slice.call(arguments)));
             }
         }
-        return fn.appay(null, args);
+        return fn.apply(null, args);
     }
 }
 ```
@@ -115,7 +115,9 @@ function partial(...partArguments) {
     }
 }
 ```
+
 应用如下：
+
 ``` js
 let delayTenMs = partial(setTimeout, undefined, 10);
 delayTenMs(() => console.log('我会被打印'));
