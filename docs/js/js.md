@@ -78,3 +78,179 @@ js的数据类型
     let b = c.of("string").map(x => x.toUpperCase());
     console.log(b)
 ```
+
+### promise
+``` js
+    // 定义
+    "use strict";
+    var fs = require("fs");
+    function File() {
+        this.promise = Promise.resolve();
+    }
+    // Static method for File.prototype.read
+    File.read = function (filePath) {
+        var file = new File();
+        return file.read(filePath);
+    };
+    File.prototype.then = function (onFulfilled, onRejected) {
+        this.promise = this.promise.then(onFulfilled, onRejected);
+        return this;
+    };
+    File.prototype["catch"] = function (onRejected) {
+        this.promise = this.promise.catch(onRejected);
+        return this;
+    };
+    File.prototype.read = function (filePath) {
+        return this.then(function () {
+        return fs.readFileSync(filePath, "utf-8");
+    });
+    };
+    File.prototype.transform = function (fn) {
+        return this.then(fn);
+    };
+    File.prototype.write = function (filePath) {
+        return this.then(function (data) {
+            return fs.writeFileSync(filePath, data)
+        });
+    };
+    module.exports = File;
+
+    // 使用
+    var File = require("./fs-promise-chain");
+    var inputFilePath = "input.txt",
+    outputFilePath = "output.txt";
+
+    File.read(inputFilePath)
+        .transform(function (content) {
+        return ">>" + content;
+    })
+    .write(outputFilePath);
+    // => 处理流程类似以下的伪代码
+    promise.then(function read(){
+        return fs.readFileSync(filePath, "utf-8");
+    }).then(function transform(content) {
+        return ">>" + content;
+    }).then(function write(){
+        return fs.writeFileSync(filePath, data);
+    });
+
+    // 若是使用stream的话
+    readableStream.pipe(transformStream).pipe(writableStream);
+```
+
+array
+
+``` js
+"use strict";
+
+function ArrayAsPromise(array) {
+    this.array = array;
+    this.promise = Promise.resolve();
+}
+ArrayAsPromise.prototype.then = function (onFulfilled, onRejected) {
+    this.promise = this.promise.then(onFulfilled, onRejected);
+    return this;
+};
+ArrayAsPromise.prototype["catch"] = function (onRejected) {
+    this.promise = this.promise.catch(onRejected);
+    return this;
+};
+Object.getOwnPropertyNames(Array.prototype).forEach(function (methodName) {
+    // Don't overwrite
+    if (typeof ArrayAsPromise[methodName] !== "undefined") {
+        return;
+    }
+    var arrayMethod = Array.prototype[methodName];
+    if (typeof arrayMethod !== "function") {
+        return;
+    }
+    ArrayAsPromise.prototype[methodName] = function () {
+        var that = this;
+        var args = arguments;
+        this.promise = this.promise.then(function () {
+            that.array = Array.prototype[methodName].apply(that.array, args);
+            return that.array;
+        });
+        return this;
+    };
+});
+module.exports = ArrayAsPromise;
+module.exports.array = function newArrayAsPromise(array) {
+    return new ArrayAsPromise(array);
+};
+// test
+"use strict";
+var assert = require("power-assert");
+var ArrayAsPromise = require("../src/promise-chain/array-promise-chain");
+describe("array-promise-chain", function () {
+    function isEven(value) {
+        return value % 2 === 0;
+    }
+
+    function double(value) {
+        return value * 2;
+    }
+    beforeEach(function () {
+        this.array = [1, 2, 3, 4, 5];
+    });
+    describe("Native array", function () {
+        it("can method chain", function () {
+            var result = this.array.filter(isEven).map(double);
+            assert.deepEqual(result, [4, 8]);
+        });
+    });
+    describe("ArrayAsPromise", function () {
+        it("can promise chain", function (done) {
+            var array = new ArrayAsPromise(this.array);
+            array.filter(isEven).map(double).then(function (value) {
+                assert.deepEqual(value, [4, 8]);
+            }).then(done, done);
+        });
+    });
+});
+
+// reduce获取结果
+function getURL(URL) {
+    return new Promise(function (resolve, reject) {
+        var req = new XMLHttpRequest();
+        req.open('GET', URL, true);
+        req.onload = function () {
+            if (req.status === 200) {
+                resolve(req.responseText);
+            } else {
+                reject(new Error(req.statusText));
+            }
+        };
+        req.onerror = function () {
+            reject(new Error(req.statusText));
+        };
+        req.send();
+    });
+}
+var request = {
+    comment: function getComment() {
+        return getURL('http://azu.github.io/promises-book/json/comment.json').then(JSON.parse);
+    },
+    people: function getPeople() {
+        return getURL('http://azu.github.io/promises-book/json/people.json').then(JSON.parse);
+    }
+};
+
+function main() {
+    function recordValue(results, value) {
+        results.push(value);
+        return results;
+    }
+    var pushValue = recordValue.bind(null, []);
+    var tasks = [request.comment, request.people];
+    return tasks.reduce(function (promise, task) {
+        return promise.then(task).then(pushValue);
+    }, Promise.resolve());
+}
+// 运行示例
+main().then(function (value) {
+    console.log(value);
+}).catch(function (error) {
+    console.error(error);
+});
+```
