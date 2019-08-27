@@ -210,6 +210,7 @@ describe("array-promise-chain", function () {
 });
 
 // reduce获取结果
+// 顺序执行
 function getURL(URL) {
     return new Promise(function (resolve, reject) {
         var req = new XMLHttpRequest();
