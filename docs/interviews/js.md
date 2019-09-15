@@ -68,3 +68,5 @@ https://github.com/xieranmaya/blog/issues/5
 https://github.com/kriskowal/q/blob/v1/q.js#L101
 http://liubin.org/promises-book/javascript-promise-book.pdf
 https://juejin.im/post/5a04066351882517c416715d
+
+### 有几种判断数据类型的方式
