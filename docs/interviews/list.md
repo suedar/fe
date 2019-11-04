@@ -99,5 +99,12 @@ https
 写一个函数，可以控制最大并发数
 实现数组flat、filter等方法
 
+
+### 其他
+1. reset、revert、rebase的作用
+revert可以逆反一次commit
+reset重置所有修改
+rebase将分支上的修改复刻到master分支上
+
 ### 软实力
 用结构性思维进行解释加分
