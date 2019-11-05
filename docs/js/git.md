@@ -29,7 +29,7 @@ checkout
 
 stash
 > 注意：没有被 track 的文件（即从来没有被 add 过的文件不会被 stash 起来，因为 Git 会忽略它们。如果想把这些文件也一起 stash，可以加上 `-u` 参数，它是 `--include-untracked` 的简写。就像这样：
-git stash -u
+> git stash -u
 
 ### 分支合并
 
