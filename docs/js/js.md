@@ -22,8 +22,7 @@ js的数据类型
     }, 1000)
     const c = setTimeout(() => {
         console.log(3)
-    }, 1000);
-    const d = setTimeout(() => {
+    }, 1000);     const d = setTimeout(() => {
         console.log(4)
     }, 1000);
 
