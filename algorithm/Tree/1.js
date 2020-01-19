@@ -59,11 +59,10 @@ function toTree(arr) {
         return null;
     }
     if (arr.length === 1) {
-        return new TreeNode(arr[0])
+        return new TreeNode(arr[0]);
     }
     let root = new TreeNode(arr[0]);
     let length = arr.length / 2 + 1;
-    console.log(arr.slice(1, length), arr.slice(length + 1))
     root.left = toTree(arr.slice(1, length));
     root.right = toTree(arr.slice(length + 1));
     return root;
