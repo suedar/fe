@@ -1,8 +1,10 @@
 1. 二分
 
-<!-- https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/ -->
+> 模板 #1
+> https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/
+
 ``` js
-function erfen(nums, target) {
+function dichotomy(nums, target) {
     let len = nums.length;
     let left = 0;
     let right = len - 1;
