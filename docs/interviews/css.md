@@ -15,5 +15,4 @@ bfc 表示内部的元素不会影响到外部的一个布局 哪些元素会生
   <div class="content"></div>
   <div class="right-side"></div>
 </section>
-
 ```
