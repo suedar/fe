@@ -70,3 +70,24 @@ http://liubin.org/promises-book/javascript-promise-book.pdf
 https://juejin.im/post/5a04066351882517c416715d
 
 ### 有几种判断数据类型的方式
+
+### 箭头函数
+- 如果箭头函数的函数体只有一条语句并且不需要返回值（最常见是调用一个函数），可以给这条语句前面加一个void关键字
+- this指向
+1. 箭头函数不会创建自己的this
+2. 箭头函数继承而来的this指向永远不变
+3. .call()/.apply()/.bind()无法改变箭头函数中this的指向
+> https://juejin.im/post/6844903805960585224
+
+- 箭头函数不能作为构造函数使用
+- 箭头函数没有自己的arguments
+- 箭头函数没有原型prototype
+- 箭头函数不能用作Generator函数，不能使用yeild关键字
+
+### 事件委托的原理
+DOM2的事件流包含三个阶段
+- 事件委托
+- 目标阶段
+- 事件冒泡
+
+事件委托是利用事件冒泡机制实现的。
