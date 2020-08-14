@@ -16,3 +16,42 @@ bfc 表示内部的元素不会影响到外部的一个布局 哪些元素会生
   <div class="right-side"></div>
 </section>
 ```
+
+
+### flex
+
+1. 水平垂直居中
+
+2. 一边定宽，一边自适应
+
+3. 多列等分布局
+
+4. 圣杯布局
+
+5. sticky footer
+
+#### sticky footer
+如果页面内容不够长的时候，footer固定在视窗底部；如果内容足够长时，footer会被内容向下推。
+
+``` html
+<div class="detail-flex">
+    <div class="detail-content">detail-content</div>
+    <div class="detail-footer">detail-footer</div>
+</div>
+```
+
+``` stylus
+.detail-flex
+    display: flex
+    flex-direction: column
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    overflow: auto
+    .detail-content
+        flex: 1 0 auto
+    .detail-footer
+        flex: 0 0 auto
+```

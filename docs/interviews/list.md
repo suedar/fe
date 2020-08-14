@@ -78,7 +78,7 @@ function throttle(fn, interval = 300) {
 8、document 对象触发 DOMContentLoaded 事件，这也标志着程序执行从同步脚本执行阶段， 转化为事件驱动阶段。
 9、当所有 async 的脚本加载完成并执行后、img 等加载完成后，document.readyState = 'complete'，window 对象触发 load 事件。 10、从此，以异步响应方式处理用户输入、网络事件等。
 
-强缓存、协商缓存、CDN缓存
+强缓存、协商缓存
 HTTP2
 HTTP状态码
 三次握手与四次挥手
