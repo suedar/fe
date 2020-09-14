@@ -140,3 +140,6 @@ delayTenMs(() => console.log('我会被打印'));
      }
  }
 ```
+
+### 文章
+> [简单了解JavaScript垃圾回收机制](https://juejin.im/post/6844903556265279502)
