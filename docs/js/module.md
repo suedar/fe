@@ -1,0 +1,1 @@
+以AMD定义JS模块通过RequireJS能直接运行于浏览器；commonJS则需要browserfy等Node.js打包后才能运行于浏览器
