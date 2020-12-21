@@ -42,6 +42,8 @@ $.get(url, data1 => {
 
 `Promise`是一种封装和组合未来值得易于复用机制，实现关注点分离、异步流程控制、异常冒泡、串行/并行控制等。
 
+promise.race 可以用作超时处理
+
 > https://juejin.im/post/5a30193051882503dc53af3c#comment
 
 
@@ -130,4 +132,9 @@ Function.prototype.apply = function (context, arr) {
     return result;
 }
 
+Function.prototype._bind = function(_this, arguments) {
+    
+}
+
 ```
+
