@@ -270,6 +270,8 @@ yarn 的优先
 
 ### 微服务
 时间跟空间隔离的情况 产品的意义的 制定不同资源的
-qiankun 根据single-spa 重写pushstate 调度app的加载
+single-spa
+重写pushstate 控制对应路由的加载
+qiankun
 js沙盒 windows进行代理
 css隔离 app scope-id
