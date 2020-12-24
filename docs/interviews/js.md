@@ -133,8 +133,22 @@ Function.prototype.apply = function (context, arr) {
 }
 
 Function.prototype._bind = function(_this, arguments) {
-    
 }
 
 ```
 
+### this指向问题
+``` js
+var a = function() {
+    data: 'i am a'
+    b: function() {
+        console.log(this.data);
+    }
+}
+a.b() => i am a
+```
+this指向其调用方
+> https://juejin.cn/post/6844903518101323784
+
+### 变量提升
+function 会跟 var 一样提升
