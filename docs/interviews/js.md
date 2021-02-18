@@ -86,6 +86,45 @@ https://juejin.im/post/5a04066351882517c416715d
 - 箭头函数没有原型prototype
 - 箭头函数不能用作Generator函数，不能使用yeild关键字
 
+``` js
+
+var id = 'Global';
+
+function fun1() {
+    setTimeout(function(){
+        console.log(this.id);
+    }, 2000);
+}
+
+function fun2() {
+    setTimeout(() => {
+        console.log(this.id);
+    }, 2000)
+}
+
+fun1.call({id: 'Obj'});
+
+fun2.call({id: 'Obj'});
+
+
+// 'Global'
+// 'Obj'
+
+var id = 'GLOBAL';
+var obj = {
+  id: 'OBJ',
+  a: function(){
+    console.log(this.id);
+  },
+  b: () => {
+    console.log(this.id);
+  }
+};
+
+obj.a();    // 'OBJ'
+obj.b();    // 'GLOBAL'
+```
+
 ### 事件委托的原理
 DOM2的事件流包含三个阶段
 - 事件委托
