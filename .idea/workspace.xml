@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1952cb46-9158-475a-b4c5-d2db1bdec62d" name="Default Changelist" comment="" />
+    <list default="true" id="1952cb46-9158-475a-b4c5-d2db1bdec62d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ans/dataStructure/Array/5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lPaRTcrhu2n2EDlaf54XJnoaVd" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,6 +51,16 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="5.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/ans/dataStructure/Array/5.js" working-dir="$PROJECT_DIR$/ans/dataStructure/Array">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.5.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -36,16 +70,65 @@
       <option name="presentableId" value="Default" />
       <updated>1607501175821</updated>
       <workItem from="1607501177380" duration="1715000" />
+      <workItem from="1625730520003" duration="3172000" />
+      <workItem from="1626055441964" duration="547000" />
+      <workItem from="1626069803897" duration="690000" />
+      <workItem from="1626142507344" duration="1454000" />
+      <workItem from="1626242249376" duration="573000" />
+      <workItem from="1628761197827" duration="1894000" />
+      <workItem from="1629714823053" duration="1647000" />
+      <workItem from="1629882749304" duration="461000" />
+      <workItem from="1629954121660" duration="1360000" />
+      <workItem from="1632538514114" duration="532000" />
+      <workItem from="1634198656802" duration="4047000" />
+      <workItem from="1634637030902" duration="1836000" />
+      <workItem from="1634639044635" duration="5176000" />
+      <workItem from="1634781591838" duration="544000" />
+      <workItem from="1634807247646" duration="1689000" />
+      <workItem from="1638758443757" duration="1265000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="422" y="189" width="596" height="522" key="find.popup" timestamp="1607501197059">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1370" height="249" key="GridCell.Tab.0.bottom" timestamp="1634696057756">
+      <screen x="0" y="25" width="1792" height="1036" />
     </state>
-    <state x="422" y="189" width="596" height="522" key="find.popup/0.0.1440.900/1440.-180.1920.1080@0.0.1440.900" timestamp="1607501197059" />
+    <state width="1370" height="228" key="GridCell.Tab.0.bottom/1792.-55.1920.1175/-1920.25.1920.1055/0.25.1792.1035@0.25.1792.1035" timestamp="1634638889544" />
+    <state width="1370" height="249" key="GridCell.Tab.0.bottom/1792.-55.1920.1175/-1920.25.1920.1055/0.25.1792.1036@0.25.1792.1036" timestamp="1634696057756" />
+    <state width="1370" height="249" key="GridCell.Tab.0.center" timestamp="1634696057754">
+      <screen x="0" y="25" width="1792" height="1036" />
+    </state>
+    <state width="1370" height="228" key="GridCell.Tab.0.center/1792.-55.1920.1175/-1920.25.1920.1055/0.25.1792.1035@0.25.1792.1035" timestamp="1634638889541" />
+    <state width="1370" height="249" key="GridCell.Tab.0.center/1792.-55.1920.1175/-1920.25.1920.1055/0.25.1792.1036@0.25.1792.1036" timestamp="1634696057754" />
+    <state width="1370" height="249" key="GridCell.Tab.0.left" timestamp="1634696057752">
+      <screen x="0" y="25" width="1792" height="1036" />
+    </state>
+    <state width="1370" height="228" key="GridCell.Tab.0.left/1792.-55.1920.1175/-1920.25.1920.1055/0.25.1792.1035@0.25.1792.1035" timestamp="1634638889540" />
+    <state width="1370" height="249" key="GridCell.Tab.0.left/1792.-55.1920.1175/-1920.25.1920.1055/0.25.1792.1036@0.25.1792.1036" timestamp="1634696057752" />
+    <state width="1370" height="249" key="GridCell.Tab.0.right" timestamp="1634696057755">
+      <screen x="0" y="25" width="1792" height="1036" />
+    </state>
+    <state width="1370" height="228" key="GridCell.Tab.0.right/1792.-55.1920.1175/-1920.25.1920.1055/0.25.1792.1035@0.25.1792.1035" timestamp="1634638889542" />
+    <state width="1370" height="249" key="GridCell.Tab.0.right/1792.-55.1920.1175/-1920.25.1920.1055/0.25.1792.1036@0.25.1792.1036" timestamp="1634696057755" />
+    <state x="413" y="277" width="1054" height="738" key="find.popup" timestamp="1638760234754">
+      <screen x="0" y="25" width="1792" height="1023" />
+    </state>
+    <state x="413" y="277" width="1054" height="738" key="find.popup/-1920.25.1920.1055/1792.-80.1920.1200/0.25.1792.1023@0.25.1792.1023" timestamp="1638760234754" />
+    <state x="568" y="271" width="839" height="676" key="find.popup/1792.-55.1920.1175/-1920.25.1920.1055/0.25.1792.1027@0.25.1792.1027" timestamp="1632622231733" />
   </component>
 </project>
