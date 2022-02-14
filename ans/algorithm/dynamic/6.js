@@ -49,6 +49,7 @@ var minPathSum = function(grid) {
     }
     return arr[xLen - 1][yLen - 1] + grid[0][0] + grid[xLen - 1][yLen - 1];
 };
+
 console.log(minPathSum([
     [1],
     [1],
