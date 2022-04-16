@@ -76,7 +76,8 @@ function throttle(fn, interval = 300) {
 6、当文档解析完成，document.readyState = 'interactive'。
 7、文档解析完成后，所有设置有 defer 的脚本会按照顺序执行。(注意与 async 的不同,但同样禁止 使用 document.write());
 8、document 对象触发 DOMContentLoaded 事件，这也标志着程序执行从同步脚本执行阶段， 转化为事件驱动阶段。
-9、当所有 async 的脚本加载完成并执行后、img 等加载完成后，document.readyState = 'complete'，window 对象触发 load 事件。 10、从此，以异步响应方式处理用户输入、网络事件等。
+9、当所有 async 的脚本加载完成并执行后、img 等加载完成后，document.readyState = 'complete'，window 对象触发 load 事件。 
+10、从此，以异步响应方式处理用户输入、网络事件等。
 
 强缓存、协商缓存
 HTTP2
