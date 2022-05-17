@@ -191,3 +191,26 @@ this指向其调用方
 
 ### 变量提升
 function 会跟 var 一样提升
+
+```
+function cloneDeep(origin) {
+    if (!typeof origin === 'object') {
+        return origin;
+    }
+
+    const target = origin instanceOf Array ? [] : {};
+
+    for (let i in origin) {
+        if (typeof origin[i] === 'object') {
+            target[i] = cloneDeep(origin[i]);
+        }
+        else {
+            target[i] = origin[i];
+        }
+    }
+
+    return target;
+}
+```
+
+## 排序

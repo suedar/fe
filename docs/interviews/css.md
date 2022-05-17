@@ -7,7 +7,12 @@ bfc 表示内部的元素不会影响到外部的一个布局 哪些元素会生
 - position 的值不为 relative 和 static
 - display 的值为 table-cell, table-caption, inline-block 中的任何一个
 
-浮动不为none，超过不为可见，位置不为相对，display不为兼容
+浮动不为none，超过不为可见，位置不为相对与静态，display不为兼容
+
+功能
+自我独立，内部元素不会影响外部元素
+会包含浮动元素
+同一个BFC的margin重叠
 
 ### 三栏布局
 
