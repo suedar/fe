@@ -12,8 +12,13 @@ ESM
 1. 静态的import/export,方便代码依赖分析，需要依赖babel转化
 2. commonjs通过esm转化为ESM在浏览器使用 
 
+UMD
+umd是一种思想，就是一种兼容 commonjs, AMD, CMD 的兼容写法，define.amd / define.cmd / module 等判断当前支持什么方式，
 
-CommonsJs与ES6之间的差别
-1. CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用
-2. CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。
+UMD先判断支持 Node.js 的模块（exports）是否存在，存在则使用Node.js模块模式。再判断是否支持AMD（define是否存在），存在则使用AMD方式加载模块。都不行就挂载到 window 全局对象上面去
+
+
+CommonsJs与ESM之间的差别
+1. CommonJS 模块输出的是一个值的拷贝，ESM 模块输出的是值的引用
+2. CommonJS 模块是运行时加载，ESM 模块是编译时输出接口。
 3. CommonJS 模块的require()是同步加载模块，ES6 模块的import命令是异步加载，有一个独立的模块依赖的解析阶段。
